@@ -24,9 +24,9 @@ GLint ster = 0;
 
 
 // Rozmiar kroku (liczba pikseli) w osi x i y
-GLfloat xstep = 1.0f;
-GLfloat ystep = 1.0f;
-GLfloat step = 1.0f;
+GLfloat xstep = 3.0f;
+GLfloat ystep = 3.0f;
+GLfloat step = 3.0f;
 // Dane zmieniajcych siê rozmiarów okna
 GLfloat windowWidth;
 GLfloat windowHeight;
@@ -114,11 +114,11 @@ void TimerFunction(int value) {
 	// krawêdzi, co mog³oby spowodowaæ, ¿e znalaz³ by siê poza      
 	// przestrzeni¹ ograniczajc¹.     
 	
-	/*if (x1 > windowWidth - rsize)
-		x1 = windowWidth - rsize - 1;
+	if (x0 > windowWidth - rsize)
+		x0 = windowWidth - rsize - 1;
 
-	if (y1 > windowHeight - rsize)
-		y1 = windowHeight - rsize - 1;*/
+	if (y0 > windowHeight - rsize)
+		y0 = windowHeight - rsize - 1;
 
 	// Wykonanie przesuniêcia kwadratu
 
@@ -133,12 +133,6 @@ void TimerFunction(int value) {
 	default:
 		break;
 	}
-
-
-	
-
-
-
 
 	// Ponowne rysowanie sceny z nowymi wspó³rzêdnymi  
 	glutPostRedisplay();
